@@ -1,0 +1,60 @@
+﻿@model final.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "createAcc";
+    Layout = "~/Views/Shared/InputAdminView.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="update">
+    <form method="post">
+        <h1 class="update-title">Thêm Tài Khoản</h1>
+        <div class="form-content">
+
+            <div class="form-group update-form">
+                <label for="">UserName</label>
+                <input type="text"
+                       name="UserNameKH"
+                       class="form-control"
+                       placeholder="" />
+            </div>
+            <div class="form-group update-form">
+                <label for="">Tên Tài Khoản</label>
+                <input type="text"
+                       name="TenKH"
+                       class="form-control"
+                       placeholder="" />
+            </div>
+            <div class="form-group update-form">
+                <label for="">Số Điện Thoại</label>
+                <input type="number"
+                       name="SDT"
+                       class="form-control"
+                       placeholder="" />
+            </div>
+            <div class="form-group update-form">
+                <label for="">Chức Vụ</label>
+                <div style="display: flex; align-items: center">
+                    <input style="width: 20px; height: 20px; 
+                            margin-right: 10px" type="radio" 
+                            name="PhanQuyen" value="true" />
+                    <span>Quản lí</span>
+                </div>
+                <div style="display: flex; align-items: center">
+                    <input style="width: 20px; height: 20px; 
+                            margin-right: 10px" type="radio" 
+                            name="PhanQuyen" value="false" checked />
+                    <span>Khách Hàng</span>
+                </div>
+            </div>
+        </div>
+        <div class="update-submit">
+            <button type="submit" class="btn btn-success w-100">Thêm</button>
+        </div>
+    </form>
+</div>
+}

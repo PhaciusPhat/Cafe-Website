@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/assets/css/admin/general.css" />
+    <link rel="stylesheet" href="~/assets/css/admin/input.css" />
+</head>
+<body>
+    <div class="container-fluid admin-body">
+        <div class="row admin-content">
+            <div class="col-1 admin-navs">
+                <img src="~/assets/img/logo.png" width="75" alt="" />
+                <a href=@Url.Action("DSSP", "Admin")>Sản Phẩm</a>
+                <a href=@Url.Action("DSLSP", "Admin")>Loại Sản Phẩm</a>
+                <a href=@Url.Action("DSTK", "Admin")>Tài Khoản</a>
+                <a href=@Url.Action("DSHD", "Admin")>Thống Kê</a>
+                <img src="~/assets/img/uyen.jpg" width="75" alt="" />
+            </div>
+            <div class="col-11 admin-tabs">
+                <header class="header">
+                    <div class="uyenDiChuyen">
+                        <img src="~/assets/img/uyen.jpg" width="75" alt="" />
+                        <span style="color: black">bà chủ quán</span>
+                    </div>
+                    <div class="accountInfo">
+                        <img src="~/assets/img/uyen.jpg" width="50" alt="" />
+                        <p>Xin chào uyên</p>
+                        <a href="@Url.Action("Logout", "Home")">Đăng Xuất</a>
+                    </div>
+                </header>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+</html>

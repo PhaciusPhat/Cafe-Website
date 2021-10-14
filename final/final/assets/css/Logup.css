@@ -1,0 +1,64 @@
+﻿
+.bg-form-logup {
+    height: 950px;
+    background: url("../img/banner.png") no-repeat center center fixed;
+    background-size: cover;
+    padding: 80px 500px;
+}
+
+    .bg-form-logup h1 {
+        text-shadow: 1px 1px 2px black, 0 0 25px #ff3c00, 0 0 5px #ff3c00;
+    }
+
+    .bg-form-logup .form-logup {
+        text-align: center;
+        width: 100%;
+        padding: 10px 250px;
+        background-color: rgba(231, 231, 212, 0.835);
+        box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+    }
+
+        .bg-form-logup .form-logup input {
+            border: 1px solid #ff3c00;
+            box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+            border-radius: 30px;
+            padding: 0 20px;
+            font-size: 20px;
+        }
+
+        .bg-form-logup .form-logup :focus {
+            outline: none;
+        }
+
+        .bg-form-logup .form-logup button {
+            border: 1px solid #ff3c00;
+            box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+        }
+
+        .bg-form-logup .form-logup form a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .bg-form-logup .form-logup form .form-input {
+            position: relative;
+        }
+
+            .bg-form-logup .form-logup form .form-input label {
+                position: absolute;
+                left: 10px;
+                margin: 0;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+                pointer-events: none;
+                font-size: 15px;
+            }
+
+            .bg-form-logup .form-logup form .form-input input:focus ~ label {
+                top: -20px;
+                font-size: 15px;
+                color: #ff3c00;
+                transition: 0.5s ease all;
+            }

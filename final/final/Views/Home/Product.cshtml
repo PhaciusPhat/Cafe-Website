@@ -1,0 +1,40 @@
+﻿@model final.Models.SanPham
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<link rel="stylesheet" href="~/assets/css/style.css" />*@
+@using (Html.BeginForm())
+{
+<div class="container product">
+    @Html.AntiForgeryToken()
+    <h1 style="text-align: center; margin-top: 20px; color: #fdd758">
+        Sản phẩm
+    </h1>
+    <div class="row product-content">
+        <div class="col-3">
+            <img src="~/assets/img/@Url.Content(Model.HinhAnh)" width="250" alt="" />
+        </div>
+        <div class="col-9">
+            <h3>@Model.TenSP</h3>
+            <p>@Model.GiaSP</p>
+            <p>@Model.ThongTinChiTiet</p>
+            <button type="submit" class="btn btn-warning text-white">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+    <h4 style="text-align: center; margin-bottom: 50px; color: #fdd758">
+        Các sản phẩm khác
+    </h4>
+    <div class="more-product slick">
+        @foreach (var item in ViewBag.anotherProducts)
+        {
+            <a href=@Url.Action("Product","Home", new { id = item.MaSP })>
+                <img src="~/assets/img/@Url.Content(item.HinhAnh)" alt=@item.TenSP width="175" height="175" />
+                <h5>@item.TenSP</h5>
+                <p>@item.GiaSP VNĐ</p>
+            </a>
+        }
+    </div>
+</div>
+}

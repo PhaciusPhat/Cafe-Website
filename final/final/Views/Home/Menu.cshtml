@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int count = 0;
+    int check = 0;
+    string isActiveTab = "";
+    string isActiveContent = "";
+    string idTab = "";
+}
+
+<div class="menu-list container">
+    <h1 style="text-align: center; margin-bottom: 50px; color: #fdd758">
+        Menu
+    </h1>
+    <div class="row">
+        <div class="col-2">
+            <ul class="nav nav-tabs">
+                @foreach (var item in ViewBag.LoaiSP)
+                {
+                    isActiveTab = count == 0 ? "active" : "";
+                    idTab = "loaisp" + count.ToString();
+                    <li class="nav-item">
+                        <a class="nav-link @isActiveTab" data-toggle="tab" href="#@idTab">@item.TenLoai</a>
+                    </li>
+                    count++;
+                }
+            </ul>
+        </div>
+
+        <div class="col-10">
+            <div class="tab-content">
+                @foreach (var item in ViewBag.LoaiSP)
+                {
+                    idTab = "loaisp" + check.ToString();
+                    isActiveContent = check == 0 ? "active" : "fade";
+                    <div class="tab-pane container @isActiveContent" id="@idTab">
+                        @foreach (var i in ViewBag.SanPham) { 
+                            if(i.MaLoaiSP == item.MaLoaiSP)
+                            {
+                            <a class="menu-item" href="@Url.Action("Product","Home", new { id = i.MaSP })">
+                                <img src="~/assets/img/@Url.Content(i.HinhAnh)" alt=@i.TenSP />
+                                <h5>@i.TenSP</h5>
+                                <p>@i.GiaSP VNĐ</p>
+                            </a>
+                            }
+                        }
+                        
+                    </div>
+                    check++;
+                }
+            </div>
+        </div>
+    </div>
+</div>

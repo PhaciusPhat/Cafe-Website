@@ -1,0 +1,161 @@
+﻿html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+@keyframes uyenDiChuyen {
+    0% {
+        left: 0;
+        top: 0;
+    }
+
+    50% {
+        left: 1100px;
+        top: 0;
+    }
+
+    100% {
+        left: 0;
+        top: 0;
+    }
+}
+
+.admin-body {
+    height: 100%;
+}
+
+    .admin-body .admin-content {
+        height: 100%;
+    }
+
+        .admin-body .admin-content .admin-navs {
+            background: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+
+            .admin-body .admin-content .admin-navs img {
+                margin-top: 20px;
+                margin-bottom: 50px;
+            }
+
+            .admin-body .admin-content .admin-navs a {
+                color: #aef800;
+                font-size: 22px;
+                text-decoration: none;
+                margin-bottom: 20px;
+            }
+
+        .admin-body .admin-content .admin-tabs .header {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+        }
+
+            .admin-body .admin-content .admin-tabs .header .uyenDiChuyen {
+                border-radius: 50%;
+                position: relative;
+                animation: uyenDiChuyen 8s infinite;
+            }
+
+                .admin-body .admin-content .admin-tabs .header .uyenDiChuyen img {
+                    border-radius: 50%;
+                }
+
+            .admin-body .admin-content .admin-tabs .header .accountInfo {
+                display: flex;
+                justify-content: space-between;
+                background: linear-gradient(to right, yellow, black);
+                padding: 10px 30px;
+                border-radius: 20px;
+                align-items: center;
+                font-size: 20px;
+            }
+
+                .admin-body .admin-content .admin-tabs .header .accountInfo img {
+                    border-radius: 50%;
+                }
+
+                .admin-body .admin-content .admin-tabs .header .accountInfo p {
+                    margin: 0;
+                    margin: 0 10px;
+                }
+
+                .admin-body .admin-content .admin-tabs .header .accountInfo a {
+                    color: white;
+                    text-decoration: none;
+                }
+
+        .admin-body .admin-content .admin-tabs .tab-content {
+            padding: 100px 300px;
+        }
+
+            .admin-body .admin-content .admin-tabs .tab-content .title {
+                color: #aef800;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .admin-body .admin-content .admin-tabs .tab-content .tools {
+                display: flex;
+                justify-content: flex-end;
+                padding: 0 100px;
+                margin-bottom: 20px;
+            }
+
+                .admin-body .admin-content .admin-tabs .tab-content .tools input {
+                    width: 300px;
+                    margin-right: 10px;
+                }
+
+            .admin-body .admin-content .admin-tabs .tab-content .table {
+                text-align: center;
+                border: 1px solid #aef800;
+                height: 400px;
+                overflow: scroll;
+                overflow-x: hidden;
+                width: 1000px;
+                margin: 0 auto;
+            }
+
+                .admin-body .admin-content .admin-tabs .tab-content .table .table-title {
+                    color: red;
+                    border-bottom: 1px solid #aef800;
+                }
+
+                .admin-body .admin-content .admin-tabs .tab-content .table .table-content .table-row div {
+                    width: 190px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+
+                .admin-body .admin-content .admin-tabs .tab-content .table .table-row {
+                    padding: 10px 0;
+                }
+
+                    .admin-body .admin-content .admin-tabs .tab-content .table .table-row div {
+                        margin: 0;
+                        width: 190px;
+                        display: inline-block;
+                    }
+
+                    .admin-body .admin-content .admin-tabs .tab-content .table .table-row button {
+                        font-size: 10px;
+                    }
+
+            .admin-body .admin-content .admin-tabs .tab-content .more-tools {
+                display: flex;
+                justify-content: center;
+                padding: 0 100px;
+                margin-top: 20px;
+            }
+
+                .admin-body .admin-content .admin-tabs .tab-content .more-tools button {
+                    margin: 0 5px;
+                }
+
+/*# sourceMappingURL=admin.css.map */

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<final.Models.CTHD>
+
+@{
+    ViewBag.Title = "CTHD";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    int temp;
+}
+
+<h2 class="title">Chi Tiết Hóa Đơn</h2>
+<div class="table">
+    <div class="table-title">
+        <div class="table-row">
+            <div>Tên Sản Phẩm</div>
+            <div>Hình Ảnh</div>
+            <div>Số Lượng</div>
+            <div>Giá Sản Phẩm</div>
+            <div>Tổng Tiền</div>
+        </div>
+    </div>
+    <div class="table-content">
+        @foreach (var item in Model)
+        {
+            temp = @item.SoLuong * @item.SanPham.GiaSP;
+        <div class="table-row">
+            <div>@item.SanPham.TenSP</div>
+            <div><img src="~/assets/img/@Url.Content(item.SanPham.HinhAnh)" width="75" alt="Alternate Text" /></div>
+            <div>@item.SoLuong</div>
+            <div>@item.SanPham.GiaSP</div>
+            <div>@temp</div>
+        </div>
+        }
+    </div>
+</div>
+<h3 style="text-align: left">Địa chỉ giao hàng: @ViewBag.DiaChi</h3>
+

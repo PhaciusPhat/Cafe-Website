@@ -1,0 +1,22 @@
+﻿.update {
+    margin: 0 300px;
+    margin-top: 20px;
+    padding: 20px 250px;
+    background: rgba(0, 0, 0, 0.568);
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0 0 30%);
+}
+
+.update-title {
+    color: #aef800;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-content, .update-submit {
+    padding: 5px;
+}
+
+label {
+    color: white;
+}

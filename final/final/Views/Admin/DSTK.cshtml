@@ -1,0 +1,52 @@
+﻿@model IEnumerable<final.Models.TaiKhoan>
+
+@{
+    ViewBag.Title = "DSTK";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 class="title">Tài Khoản</h2>
+<div class="tools">
+    <form method="post">
+        <input type="text" name="searchUserName" placeholder="tìm kiếm theo tên tài khoản">
+        <button class="btn btn-dark" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+</div>
+<div class="table">
+    <div class="table-title">
+        <div class="table-row">
+            <div>UserName</div>
+            <div>Tên Tài Khoản</div>
+            <div>Số Điện Thoại</div>
+            <div>Phân Quyền</div>
+            <div>Chức Năng</div>
+        </div>
+    </div>
+    <div class="table-content">
+        @foreach (var item in Model)
+        {
+            <div class="table-row">
+                <div>@item.UserNameKH</div>
+                <div>@item.TenKH</div>
+                <div>@item.SDT</div>
+                @if (@item.PhanQuyen == false)
+                {
+                    <div>Khách hàng</div>
+                }
+                else
+                {
+                    <div>Quản lí</div>
+                }
+                <div>
+                    <a href=@Url.Action("EditAcc", "Admin", new { UserNameKH = @item.UserNameKH}) class="btn btn-info"><i class="fas fa-pen"></i></a>
+                    <a href=@Url.Action("delAcc", "Admin", new { UserNameKH = @item.UserNameKH})  class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="more-tools">
+    <a href=@Url.Action("createAcc", "Admin") class="btn btn-success"><i class="fas fa-plus"></i></a>
+    <a class="btn btn-dark" href=@Url.Action("sortUserName", "Admin")><i class="fas fa-sort-amount-down-alt"></i></a>
+</div>
+

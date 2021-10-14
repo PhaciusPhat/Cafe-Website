@@ -1,0 +1,53 @@
+﻿@model final.Models.SanPham
+
+@{
+    ViewBag.Title = "editProduct";
+    Layout = "~/Views/Shared/InputAdminView.cshtml";
+}
+
+@using (Html.BeginForm("editProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="update">
+        <form method="post">
+            <h1 class="update-title">Cập nhật Sản Phẩm</h1>
+            <div class="form-content">
+                <div class="form-group update-form">
+                    <label for="">Tên Sản Phẩm</label>
+                    @Html.EditorFor(model => model.TenSP)
+                </div>
+                <div class="form-group update-form">
+                    <label for="">Giá Sản Phẩm</label>
+                    @Html.EditorFor(model => model.GiaSP)
+                </div>
+                <div class="form-group update-form">
+                    <label for="">Loại Sản Phẩm</label>
+                    @foreach (var item in ViewBag.ListLoaiSP)
+                    {
+                        if (item.MaLoaiSP == ViewBag.loaiSP)
+                        {
+                            <div style="display: flex"><input style="width: 20px; height: 20px; margin-right: 10px" type="radio" name="LoaiSP" checked value=@item.MaLoaiSP /><span>@item.TenLoai</span></div>
+                        }
+                        else
+                        {
+                            <div style="display: flex"><input style="width: 20px; height: 20px; margin-right: 10px" type="radio" name="LoaiSP" value=@item.MaLoaiSP /><span>@item.TenLoai</span></div>
+                        }
+                    }
+                </div>
+                <div class="form-group update-form">
+                    <label for="">Ảnh Sản Phẩm</label>
+                    <img src="~/assets/img/@Url.Content(Model.HinhAnh)" width="50" alt="Alternate Text" />
+                    <input title="Tải ảnh lên" type="file" name="HinhAnh" />
+                </div>
+                <div class="form-group update-form">
+                    <label for=""  style="margin-right: 30px">Chi Tiết</label>
+                    @Html.EditorFor(model => model.ThongTinChiTiet)
+                </div>
+            </div>
+            <div class="update-submit">
+                <button type="submit" class="btn btn-success w-100">Cập Nhật</button>
+            </div>
+        </form>
+    </div>
+}

@@ -1,0 +1,55 @@
+﻿@model final.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "EditAcc";
+    Layout = "~/Views/Shared/InputAdminView.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="update">
+        <form method="post">
+            <h1 class="update-title">Cập Nhật Tài Khoản</h1>
+            <div class="form-content">
+
+                <div class="form-group update-form">
+                    <label for="">Tên Tài Khoản</label>
+                    @Html.EditorFor(model => model.TenKH)
+                </div>
+                <div class="form-group update-form">
+                    <label for="">Số Điện Thoại</label>
+                    @Html.EditorFor(model => model.SDT)
+                </div>
+                <div class="form-group update-form">
+                    <label for="">Chức Vụ</label>
+                    @if (ViewBag.PQ == false)
+                    {
+                        <div style="display: flex; align-items: center">
+                            <input style="width: 20px; height: 20px; margin-right: 10px" type="radio" name="PhanQuyen" value="true" />
+                            <span>Admin</span>
+                        </div>
+                        <div style="display: flex; align-items: center">
+                            <input style="width: 20px; height: 20px; margin-right: 10px" type="radio" name="PhanQuyen" value="false" checked />
+                            <span>Khách Hàng</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="display: flex; align-items: center">
+                            <input style="width: 20px; height: 20px; margin-right: 10px" type="radio" name="PhanQuyen" value="true" checked />
+                            <span>Admin</span>
+                        </div>
+                        <div style="display: flex; align-items: center">
+                            <input style="width: 20px; height: 20px; margin-right: 10px" type="radio" name="PhanQuyen" value="false" />
+                            <span>Khách Hàng</span>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="update-submit">
+                <button type="submit" class="btn btn-success w-100">Cập nhật</button>
+            </div>
+        </form>
+    </div>
+}

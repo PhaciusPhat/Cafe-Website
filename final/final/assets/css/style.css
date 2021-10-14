@@ -1,0 +1,393 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(157, 219, 11, 0.63);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    z-index: 2021;
+}
+
+    .header .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .header .header-content .logo {
+            width: 60px;
+        }
+
+        .header .header-content .application {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .header .header-content .application a {
+                margin-right: 20px;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 20px;
+                transition: all 0.5s;
+            }
+
+            .header .header-content .application :hover {
+                font-size: 25px;
+                color: yellow;
+                transition: all 0.5s;
+            }
+
+            .header .header-content .application i {
+                margin-right: 20px;
+                transition: all 0.5s;
+                color: white;
+                font-size: 20px;
+            }
+
+            .header .header-content .application :hover {
+                font-size: 25px;
+                color: yellow;
+                transition: all 0.5s;
+            }
+
+.slick a {
+    color: black !important;
+}
+
+    .slick a:hover {
+        color: black !important;
+        text-decoration: none;
+    }
+
+.show-temp-product {
+    margin-top: 100px;
+}
+
+    .show-temp-product .slick img {
+        width: 250px;
+    }
+
+    .show-temp-product .slick .slick-prev,
+    .show-temp-product .slick .slick-next {
+        color: white;
+        outline: none;
+        background: yellow;
+        border-radius: 50%;
+    }
+
+        .show-temp-product .slick .slick-prev:hover,
+        .show-temp-product .slick .slick-prev:focus,
+        .show-temp-product .slick .slick-next:hover,
+        .show-temp-product .slick .slick-next:focus {
+            color: white;
+            outline: none;
+            background: yellow;
+            border-radius: 50%;
+        }
+
+.sale-poster {
+    padding: 100px 0;
+}
+
+    .sale-poster img {
+        width: 100%;
+        height: 500px;
+    }
+
+.map {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 30px 0;
+}
+
+    .footer .footer-content {
+        display: flex;
+        justify-content: space-between;
+        line-height: 30px;
+    }
+
+        .footer .footer-content .logo {
+            width: 150px;
+        }
+
+        .footer .footer-content .introduce {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer .footer-content .contact {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .footer .footer-content .contact .social-media a {
+                margin-right: 10px;
+            }
+
+            .footer .footer-content .introduce a,
+            .footer .footer-content .contact a {
+                color: white;
+                text-decoration: none;
+            }
+
+            .footer .footer-content .introduce :hover,
+            .footer .footer-content .contact :hover {
+                color: #fdd758;
+            }
+
+            .footer .footer-content .introduce i,
+            .footer .footer-content .contact i {
+                color: #fdd758;
+            }
+
+            .footer .footer-content .introduce a i,
+            .footer .footer-content .contact a i {
+                color: white;
+            }
+
+        .footer .footer-content p {
+            margin: 0;
+            color: #fdd758;
+        }
+
+.menu-list {
+    padding-top: 100px;
+    margin-bottom: 100px;
+}
+
+    .menu-list .menu-item {
+        display: inline-block;
+        margin-bottom: 30px;
+        padding: 0 5px;
+    }
+
+        .menu-list .menu-item img {
+            width: 200px;
+        }
+
+    .menu-list a.menu-item {
+        color: black !important;
+    }
+
+        .menu-list a.menu-item:hover {
+            color: black !important;
+            text-decoration: none;
+        }
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+    .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active {
+        color: #fdd758;
+        background-color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+.nav-item a {
+    color: black;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.product {
+    padding-top: 60px;
+}
+
+    .product .product-content {
+        margin: 100px 0;
+    }
+
+    .product .more-product {
+        margin-bottom: 100px;
+    }
+
+    .product .slick .slick-prev,
+    .product .slick .slick-next,
+    .product .slick .slick-prev:hover,
+    .product .slick .slick-prev:focus,
+    .product .slick .slick-next:hover,
+    .product .slick .slick-next:focus {
+        display: none;
+    }
+
+.feedback-form {
+    padding: 155px 100px;
+}
+
+    .feedback-form textarea {
+        width: 100%;
+        resize: none;
+    }
+
+.bg-form-login {
+    height: 950px;
+    background: url("../img/banner.png") no-repeat center center fixed;
+    background-size: cover;
+    padding: 150px 500px;
+}
+
+    .bg-form-login h1 {
+        text-shadow: 1px 1px 2px black, 0 0 25px #ff3c00, 0 0 5px #ff3c00;
+    }
+
+    .bg-form-login .form-login {
+        text-align: center;
+        width: 100%;
+        padding: 100px 250px;
+        background-color: rgba(231, 231, 212, 0.835);
+        box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+    }
+
+        .bg-form-login .form-login input {
+            border: 1px solid #ff3c00;
+            box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+            border-radius: 30px;
+            padding: 0 20px;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .bg-form-login .form-login :focus {
+            outline: none;
+        }
+
+        .bg-form-login .form-login button {
+            border: 1px solid #ff3c00;
+            box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+        }
+
+        .bg-form-login .form-login form a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .bg-form-login .form-login form .form-input {
+            position: relative;
+        }
+
+            .bg-form-login .form-login form .form-input label {
+                position: absolute;
+                left: 10px;
+                margin: 0;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+                pointer-events: none;
+                font-size: 20px;
+            }
+
+            .bg-form-login .form-login form .form-input input:focus ~ label {
+                top: -20px;
+                font-size: 15px;
+                color: #ff3c00;
+                transition: 0.2s ease all;
+            }
+
+.bg-form-logup {
+    height: 950px;
+    background: url("../img/banner.png") no-repeat center center fixed;
+    background-size: cover;
+    padding: 80px 500px;
+}
+
+    .bg-form-logup h1 {
+        text-shadow: 1px 1px 2px black, 0 0 25px #ff3c00, 0 0 5px #ff3c00;
+    }
+
+    .bg-form-logup .form-logup {
+        text-align: center;
+        width: 100%;
+        padding: 10px 250px;
+        background-color: rgba(231, 231, 212, 0.835);
+        box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+    }
+
+        .bg-form-logup .form-logup input {
+            border: 1px solid #ff3c00;
+            box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+            border-radius: 30px;
+            padding: 0 20px;
+            font-size: 15px;
+        }
+
+        .bg-form-logup .form-logup :focus {
+            outline: none;
+        }
+
+        .bg-form-logup .form-logup button {
+            border: 1px solid #ff3c00;
+            box-shadow: 0 0 15px rgba(255, 60, 0, 0.5);
+        }
+
+        .bg-form-logup .form-logup form a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .bg-form-logup .form-logup form .form-input {
+            position: relative;
+        }
+
+            .bg-form-logup .form-logup form .form-input label {
+                position: absolute;
+                left: 10px;
+                margin: 0;
+                transition: 0.2s ease all;
+                -moz-transition: 0.2s ease all;
+                -webkit-transition: 0.2s ease all;
+                pointer-events: none;
+                font-size: 15px;
+            }
+
+            .bg-form-logup .form-logup form .form-input input:focus ~ label {
+                top: -20px;
+                font-size: 15px;
+                color: #ff3c00;
+                transition: 0.5s ease all;
+            }
+
+
+/*# sourceMappingURL=style.css.map */
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fdd758;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #fdd758;
+    }

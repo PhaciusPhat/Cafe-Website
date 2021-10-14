@@ -1,0 +1,82 @@
+﻿@model final.Models.CTHD
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="~/assets/css/Cart.css"/>
+    string dateTime = DateTime.Now.ToString("dd-MM-yyyy");
+    DateTime temp = DateTime.Now;
+    int count = 1;
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="container cart">
+    <h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px; color: #fdd758">
+        Giỏ hàng
+    </h1>
+    <div class="cart-content">
+        @if (ViewBag.ListCart == null)
+        {
+            <h3>Không có sản phẩm nào trong giỏ hàng của bạn</h3>
+        }
+        else
+        {
+            foreach (var item in ViewBag.ListCart)
+            {
+                <div class="row mb-5">
+                    <div class="col-3">
+                        <img src="~/assets/img/@Url.Content(item.SanPham.HinhAnh)" alt="" />
+                    </div>
+                    <div class="col-9">
+                        <h3>@item.SanPham.TenSP</h3>
+                        <p>@item.SanPham.GiaSP</p>
+                        <p>@item.SanPham.ThongTinChiTiet</p>
+                        <div style="display: flex">
+                            <input style="width: 12%; font-size: 20px; padding: 2px;" name="@count+Number" id="number" type="number" value=@item.SoLuong />
+                            <a href=@Url.Action("DeleteCart","Home", new { idHd = item.MaHD, idSP = item.MaSP }) class="btn btn-danger ml-2"><i class="fa fa-trash text-white"></i></a>
+                        </div>
+                    </div>
+                </div>
+                count++;
+            }
+        }
+    </div>
+    <div class="text-right" style="margin-bottom: 100px">
+        <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#modelId">
+            <i class="fas fa-shopping-cart fa-1x text-white"></i>
+        </a>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="margin-top: 200px">
+                <div class="modal-header">
+                    <h5 class="modal-title">Điền thông tin đặt hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label>Địa chỉ giao hàng</label>
+                    <input name="local" class="w-100" />
+                    <br />
+                    <p style="margin-bottom: 0">Ngày mua: <span style="font-size: 20px">@dateTime</span></p>
+                    <span style="margin-right: 20px; text-align: left; font-size: 17px;">Khuyến mãi: @if (@ViewBag.ListSale != "không có")
+                    {@ViewBag.ListSale}
+                else
+                {@ViewBag.ListSale}</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-warning">Mua</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+

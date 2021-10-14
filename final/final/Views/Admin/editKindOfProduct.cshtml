@@ -1,0 +1,30 @@
+﻿@model final.Models.LoaiSP
+
+@{
+    ViewBag.Title = "editKindOfProduct";
+    Layout = "~/Views/Shared/InputAdminView.cshtml";
+}
+
+<h2>editKindOfProduct</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="update">
+        <form method="post">
+            <h1 class="update-title">Cập Nhật Loại Sản Phẩm</h1>
+            <div class="form-content">
+
+                <div class="form-group update-form">
+                    <label for="">Tên Loại Sản Phẩm</label>
+                    @Html.EditorFor(model => model.TenLoai, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+            </div>
+            <div class="update-submit">
+                <button type="submit" class="btn btn-success w-100">Cập nhật</button>
+            </div>
+        </form>
+    </div>
+}

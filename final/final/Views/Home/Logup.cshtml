@@ -1,0 +1,80 @@
+﻿@model final.Models.TaiKhoan
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="~/assets/img/logo.png" />
+    <title>Shop Cafe Gói Bảo Uyên</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="~/assets/css/Logup.css" />
+</head> 
+<body>
+    <div class="bg-form-logup">
+        @using (Html.BeginForm("Logup", "Home", FormMethod.Post))
+        {
+            <div class="form-logup">
+                <img src="../assets/img/logo.png" style="width: 40%" alt="" />
+                <h1 style="color: #fdd758; margin-bottom: 30px">Đăng Ký</h1>
+                @Html.AntiForgeryToken()
+            <form>
+                <div class="form-input">
+                    <p class="text-left" style="font-size: 20px; margin: 0">Tài khoản</p>
+                    @Html.EditorFor(model => model.UserNameKH, new { htmlAttributes = new { @class = "w-100 mb-2" } })
+                </div>
+
+                <div class="form-input">
+                    <p class="text-left" style="font-size: 20px; margin: 0">Mật Khẩu</p>
+                    <input type="password" name="PassWordKH" id="PassWordKH" class="w-100 mb-2" />
+                </div>
+
+                <div class="form-input">
+                    <p class="text-left" style="font-size: 20px; margin: 0">Nhập Lại Mật Khẩu</p>
+                    <input type="password" name="rePassWordKH" id="rePassWordKH" class="w-100 mb-2" />
+                </div>
+
+                <div class="form-input">
+                    <p class="text-left" style="font-size: 20px; margin: 0">Tên Người dùng</p>
+                    @Html.EditorFor(model => model.TenKH, new { htmlAttributes = new { @class = "w-100 mb-2" } })
+                </div>
+
+                <div class="form-input">
+                    <p class="text-left" style="font-size: 20px; margin: 0">Số Điện Thoại</p>
+                    @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "w-100 mb-5" } })
+                </div>
+
+                <div style="padding: 0 50px">
+                    <input  type="submit" value="đăng ký"  class="btn btn-warning text-white w-100 mb-2" />
+                    <a href="@Url.Action("Login", "Home")">Đã có tài khoản? Đăng nhập!!!</a>
+                </div>
+            </form>
+            </div>
+        }
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+</html>
+

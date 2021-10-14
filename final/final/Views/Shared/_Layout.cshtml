@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="~/assets/img/logo.png" />
+    <title>Shop Cafe Gói Bảo Uyên</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" />
+    <!-- slick slider -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet"
+          type="text/css"
+          href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+</head>
+<body>
+    <div class="header">
+        <div class="header-content container">
+            <a href="@Url.Action("Index", "Home")">
+                <img src="~/assets/img/logo.png" alt="logo" class="logo" />
+            </a>
+            <div class="application">
+                <a href="@Url.Action("Index", "Home")">Trang Chủ</a>
+                <a href="@Url.Action("Menu", "Home")">Menu</a>
+                @if(Session["UserNameKH"] == null){
+                    <a href="@Url.Action("Login", "Home")">Đăng nhập</a>
+                }
+                else
+                {
+                    <a>Xin chào @Session["TenKH"]</a>
+                    <a href="@Url.Action("Logout", "Home")">Đăng xuất</a>
+                }
+            <a href="@Url.Action("Cart", "Home")">
+                <i class="fas fa-shopping-cart fa-2x cart-logo"></i>
+            </a>
+
+            </div>
+        </div>
+    </div>
+    <img src="~/assets/img/banner.png" width="100%" height="650px" alt="banner" />
+       @RenderBody();
+    <div class="footer">
+        <div class="container footer-content">
+            <img src="~/assets/img/logo.png" alt="logo" class="logo" />
+            <div class="introduce">
+                <p style="font-size: 20px">Về chúng tôi</p>
+                <a href="@Url.Action("Menu", "Home")">Menu</a><a>Khuyến mãi</a>
+            </div>
+            <div class="contact" id="contact">
+                <p style="font-size: 20px">Liên hệ</p>
+                <p style="color: white">
+                    <i class="fas fa-map-marker-alt"></i> 93 Xô Viết Nghệ Tĩnh, phường
+                    7, Tp Đà Lạt, tỉnh Lâm Đồng
+                </p>
+                <a href="#"> (84-13) 2222 3579</a><a href="#"> cafebaoyyen@gmail.com</a>
+                <div class="social-media">
+                    <a href="#"> <i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="assurance">
+                <br />
+                <p style="color: white;">Copyright © 2020 Cafe Gói Bảo Uyên.</p>
+                <p style="color: white;">All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <!-- slick slider -->
+    <script type="text/javascript"
+            src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      $(".slick").slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 4,
+              infinite: true,
+              dots: true,
+            },
+          },
+          {
+            breakpoint: 1022,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ],
+      });
+    </script>
+    <script>
+      $(".slick-sale").slick({
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true,
+            },
+          },
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ],
+      });
+    </script>
+</body>
+</html>
